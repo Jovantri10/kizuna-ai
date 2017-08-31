@@ -1,0 +1,39 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/53e79586/
+Memepool	meme.rb	/^module Memepool$/;"	m
+Pool	quote.rb	/^module Pool$/;"	m
+add_meme	meme.rb	/^def add_meme(event, pool)$/;"	f
+addquote	quote.rb	/^def addquote(quotestring, pool)$/;"	f
+client_id	token.rb	/^def client_id()$/;"	f
+danbooru_safe_search	danbooru.rb	/^def danbooru_safe_search(tag)$/;"	f
+danbooru_search	danbooru.rb	/^def danbooru_search(tag_str)$/;"	f
+fetch_info	dangeru.rb	/^def fetch_info(board, thread_id)$/;"	f
+first_second	robo.rb	/^def first_second(phrase)$/;"	f
+generate_idea	startup.rb	/^def generate_idea()$/;"	f
+get_info	dangeru.rb	/^def get_info(url)$/;"	f
+get_meme	meme.rb	/^def get_meme(pool)$/;"	f
+is_ai?	robo.rb	/^def is_ai?(word)$/;"	f
+jsearch	jsearch.rb	/^def jsearch(searchstr)$/;"	f
+main	rate.c	/^int main(int argc, char** argv) {$/;"	f	typeref:typename:int
+make_embed	robo.rb	/^def make_embed(jlist, search)$/;"	f
+purpose	startup.rb	/^def purpose()$/;"	f
+quote	quote.rb	/^def quote(pool)$/;"	f
+rando	rando.rb	/^def rando$/;"	f
+random_from_file	startup.rb	/^def random_from_file(part_of_speech)$/;"	f
+random_from_jisho	jsearch.rb	/^def random_from_jisho(searchstr)$/;"	f
+random_pic	danbooru.rb	/^def random_pic(tagstr)$/;"	f
+random_safe_pic	danbooru.rb	/^def random_safe_pic(tag)$/;"	f
+random_word	startup.rb	/^def random_word(part_of_speech)$/;"	f
+readfile	token.rb	/^def readfile(filename)$/;"	f
+reduce	rate.c	/^int reduce(int num, int max) {$/;"	f	typeref:typename:int
+save_tag	jsearch.rb	/^def save_tag(searchstr, page=1)$/;"	f
+success	startup.rb	/^def success()$/;"	f
+suggest_tag	robo.rb	/^def suggest_tag(attempt, event)$/;"	f
+tag_search	danbooru.rb	/^def tag_search(attempt)$/;"	f
+token	token.rb	/^def token()$/;"	f
+wrangler	token.rb	/^def wrangler()$/;"	f
