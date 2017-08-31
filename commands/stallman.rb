@@ -3,7 +3,11 @@ module Aichan
     Aichan::BOT.command :stallman, description: 'F R E E D O M', usage: "#{Aichan::BOT.prefix}stallman" do |event|
         #Make a zip file of all code files (with a few additional helpful files) (TODO: link to github if zip command isn't found)
         `zip src *.rb commands/*.rb helpers/*.rb helpers/*.c README.md tags config.json.sample`
-        event.channel.send_file File.new('src.zip')
+        if File.exist? src.zip
+            event.channel.send_file File.new('src.zip')
+        else
+            event.respond "Source is available at https://github.com/rholan6/kizuna-ai"
+        end
     end
 
     #See :stallman
