@@ -1,0 +1,5 @@
+*.un~
+.gitignore~
+*.md~
+*.rb~
+*.c~
