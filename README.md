@@ -9,7 +9,7 @@ A general command bot for Discord (self-host)
 - config.json set up (see config.json.sample)  
 - Ruby 2.x with the following gems:  
     - Discordrb  
--- RubyJisho (for jisho and startup)  
+    - RubyJisho (for jisho and startup)  
 - A C Compiler (for helpers/rate.c, which is used by rate and odds)  
 - The following installed and in your system path:  
     - fortune (fortune)  
