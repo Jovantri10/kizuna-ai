@@ -46,7 +46,7 @@ def add_meme(event, pool)
                 splitname[splitname.length - 2] += append.to_s
                 testname = splitname.join('.')
                 append += 1
-            end while File.exist?(testname)
+            end while File.exist?("#{pool}#{testname}")
             filename = testname
         end
 
