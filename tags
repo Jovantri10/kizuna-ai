@@ -5,35 +5,65 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/53e79586/
-Memepool	meme.rb	/^module Memepool$/;"	m
-Pool	quote.rb	/^module Pool$/;"	m
-add_meme	meme.rb	/^def add_meme(event, pool)$/;"	f
-addquote	quote.rb	/^def addquote(quotestring, pool)$/;"	f
-client_id	token.rb	/^def client_id()$/;"	f
-danbooru_safe_search	danbooru.rb	/^def danbooru_safe_search(tag)$/;"	f
-danbooru_search	danbooru.rb	/^def danbooru_search(tag_str)$/;"	f
-fetch_info	dangeru.rb	/^def fetch_info(board, thread_id)$/;"	f
-first_second	robo.rb	/^def first_second(phrase)$/;"	f
-generate_idea	startup.rb	/^def generate_idea()$/;"	f
-get_info	dangeru.rb	/^def get_info(url)$/;"	f
-get_meme	meme.rb	/^def get_meme(pool)$/;"	f
-is_ai?	robo.rb	/^def is_ai?(word)$/;"	f
-jsearch	jsearch.rb	/^def jsearch(searchstr)$/;"	f
-main	rate.c	/^int main(int argc, char** argv) {$/;"	f	typeref:typename:int
-make_embed	robo.rb	/^def make_embed(jlist, search)$/;"	f
-purpose	startup.rb	/^def purpose()$/;"	f
-quote	quote.rb	/^def quote(pool)$/;"	f
-rando	rando.rb	/^def rando$/;"	f
-random_from_file	startup.rb	/^def random_from_file(part_of_speech)$/;"	f
-random_from_jisho	jsearch.rb	/^def random_from_jisho(searchstr)$/;"	f
-random_pic	danbooru.rb	/^def random_pic(tagstr)$/;"	f
-random_safe_pic	danbooru.rb	/^def random_safe_pic(tag)$/;"	f
-random_word	startup.rb	/^def random_word(part_of_speech)$/;"	f
-readfile	token.rb	/^def readfile(filename)$/;"	f
-reduce	rate.c	/^int reduce(int num, int max) {$/;"	f	typeref:typename:int
-save_tag	jsearch.rb	/^def save_tag(searchstr, page=1)$/;"	f
-success	startup.rb	/^def success()$/;"	f
-suggest_tag	robo.rb	/^def suggest_tag(attempt, event)$/;"	f
-tag_search	danbooru.rb	/^def tag_search(attempt)$/;"	f
-token	token.rb	/^def token()$/;"	f
-wrangler	token.rb	/^def wrangler()$/;"	f
+Aichan	commands/animal.rb	/^module Aichan$/;"	m
+Aichan	commands/aniquote.rb	/^module Aichan$/;"	m
+Aichan	commands/bigemoji.rb	/^module Aichan$/;"	m
+Aichan	commands/botsay.rb	/^module Aichan$/;"	m
+Aichan	commands/danbooru.rb	/^module Aichan$/;"	m
+Aichan	commands/dice.rb	/^module Aichan$/;"	m
+Aichan	commands/die.rb	/^module Aichan$/;"	m
+Aichan	commands/fortune.rb	/^module Aichan$/;"	m
+Aichan	commands/haiku.rb	/^module Aichan$/;"	m
+Aichan	commands/help.rb	/^module Aichan$/;"	m
+Aichan	commands/honk.rb	/^module Aichan$/;"	m
+Aichan	commands/invite.rb	/^module Aichan$/;"	m
+Aichan	commands/jisho.rb	/^module Aichan$/;"	m
+Aichan	commands/magic8ball.rb	/^module Aichan$/;"	m
+Aichan	commands/meme.rb	/^module Aichan$/;"	m
+Aichan	commands/memebooru.rb	/^module Aichan$/;"	m
+Aichan	commands/odds.rb	/^module Aichan$/;"	m
+Aichan	commands/play.rb	/^module Aichan$/;"	m
+Aichan	commands/quote.rb	/^module Aichan$/;"	m
+Aichan	commands/rate.rb	/^module Aichan$/;"	m
+Aichan	commands/regquote.rb	/^module Aichan$/;"	m
+Aichan	commands/restart.rb	/^module Aichan$/;"	m
+Aichan	commands/safebooru.rb	/^module Aichan$/;"	m
+Aichan	commands/safememe.rb	/^module Aichan$/;"	m
+Aichan	commands/secret.rb	/^module Aichan$/;"	m
+Aichan	commands/stallman.rb	/^module Aichan$/;"	m
+Aichan	commands/startup.rb	/^module Aichan$/;"	m
+Aichan	commands/vgquote.rb	/^module Aichan$/;"	m
+Aichan	robo.rb	/^module Aichan$/;"	m
+Memepool	helpers/meme.rb	/^module Memepool$/;"	m
+Pool	helpers/quote.rb	/^module Pool$/;"	m
+add_line	helpers/haiku.rb	/^def add_line(num_syllables, line)$/;"	f
+add_meme	helpers/meme.rb	/^def add_meme(event, pool)$/;"	f
+addquote	helpers/quote.rb	/^def addquote(quotestring, pool)$/;"	f
+danbooru_search	helpers/danbooru.rb	/^def danbooru_search(tag_str)$/;"	f
+empty?	helpers/empty.rb	/^def empty?(dirname)$/;"	f
+fetch_info	helpers/dangeru.rb	/^def fetch_info(board, thread_id)$/;"	f
+first_second	helpers/rate.rb	/^def first_second(phrase)$/;"	f
+generate_idea	helpers/startup.rb	/^def generate_idea()$/;"	f
+get_haiku	helpers/haiku.rb	/^def get_haiku()$/;"	f
+get_info	helpers/dangeru.rb	/^def get_info(url)$/;"	f
+get_meme	helpers/meme.rb	/^def get_meme(pool)$/;"	f
+is_self?	helpers/rate.rb	/^def is_self?(word)$/;"	f
+jsearch	helpers/jsearch.rb	/^def jsearch(searchstr)$/;"	f
+load_config	config.rb	/^def load_config(file: "config.json")$/;"	f
+load_ids	config.rb	/^def load_ids(file: "ids.json")$/;"	f
+main	helpers/rate.c	/^int main(int argc, char** argv) {$/;"	f	typeref:typename:int
+make_dirs	helpers/haiku.rb	/^def make_dirs()$/;"	f
+make_dirs	helpers/meme.rb	/^def make_dirs()$/;"	f
+make_dirs	helpers/quote.rb	/^def make_dirs$/;"	f
+purpose	helpers/startup.rb	/^def purpose()$/;"	f
+quote	helpers/quote.rb	/^def quote(pool)$/;"	f
+random_from_file	helpers/startup.rb	/^def random_from_file(part_of_speech)$/;"	f
+random_from_jisho	helpers/jsearch.rb	/^def random_from_jisho(searchstr)$/;"	f
+random_pic	helpers/danbooru.rb	/^def random_pic(tagstr)$/;"	f
+random_safe_pic	helpers/danbooru.rb	/^def random_safe_pic(tag)$/;"	f
+random_word	helpers/startup.rb	/^def random_word(part_of_speech)$/;"	f
+reduce	helpers/rate.c	/^int reduce(int num, int max) {$/;"	f	typeref:typename:int
+save_tag	helpers/jsearch.rb	/^def save_tag(searchstr, page=1)$/;"	f
+success	helpers/startup.rb	/^def success()$/;"	f
+suggest_tag	helpers/suggest_tag.rb	/^def suggest_tag(attempt, event)$/;"	f
+tag_search	helpers/danbooru.rb	/^def tag_search(attempt)$/;"	f
