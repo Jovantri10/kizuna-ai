@@ -97,13 +97,13 @@ module Aichan
     end
     
     #Give preview for danger/u/ thread links
-    BOT.message(contains: 'boards.dangeru.us') do |event|
+    BOT.message(contains: 'dangeru.us') do |event|
         #Split the message into an array of words
         words = event.message.content.split(' ')
         url = nil
         #Find the thread link
         words.each do |word|
-            if word.include?('dangeru.us') && word.include?('thread.php')
+            if word.include?('dangeru.us') && word.include?('/thread/')
                 url = word
                 break
             end

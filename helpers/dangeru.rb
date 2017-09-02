@@ -9,8 +9,8 @@ def get_info(url)
     #Get the url, board name, and thread id from the url
     thread_info[:url] = url
     split_url = url.split('/')
-    thread_info[:board] = split_url[split_url.index('boards.dangeru.us') + 1]
-    thread_info[:id] = split_url[-1][split_url[-1].index('=')+1..-1]
+    thread_info[:board] = split_url[split_url.index('dangeru.us') + 1]
+    thread_info[:id] = split_url[-1]
     #Use the board name and thread id to query the API for the title and first post
     thread = fetch_info(thread_info[:board], thread_info[:id])
     #title and first post
