@@ -96,36 +96,6 @@ module Aichan
         event.respond(happy_reacts.sample)
     end
     
-    #Give preview for danger/u/ thread links
-    BOT.message(contains: 'dangeru.us') do |event|
-        #Split the message into an array of words
-        words = event.message.content.split(' ')
-        url = nil
-        #Find the thread link
-        words.each do |word|
-            if word.include?('dangeru.us') && word.include?('/thread/')
-                url = word
-                break
-            end
-        end
-        #If the danger/u/ link was a thread, add a preview
-        if url != nil
-            #Parse the link and contact the api to get some info about it
-            thread_info = get_info(url)
-            #send message
-            event.channel.send_embed do |embed|
-                embed.title = thread_info[:title]
-                embed.url = thread_info[:url]
-                embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: 'https://lh3.googleusercontent.com/9lS0j3XUoLdAL-6DKoYj2xRZiB3Lvzge_GR6NOMxGddoVtU08GKP9HYf7NhJkvq0ZAI=w170')
-                embed.add_field(name: 'board', value: "/#{thread_info[:board]}/")
-                embed.add_field(name: 'OP', value: thread_info[:op])
-                #use the redtexting color for the sidebar
-                embed.color = 15537243
-            end
-        end
-        nil
-    end
-
     #I may need this
     BOT.message(start_with: ['a', 'A']) do |event|
         content = event.message.content.downcase

@@ -27,7 +27,7 @@ module Aichan
                     command_names += "#{c.name},  "
                 end
                 embed.add_field(name: "Command list", value: command_names[0..-4])
-                embed.add_field(name: "Other features include", value: ":ok_hand: reacts, :vs: selection, responding to positive or negative statements about the bot, and danger/u/ thread previews")
+                embed.add_field(name: "Other features include", value: ":ok_hand: reacts, :vs: selection, responding to positive or negative statements about the bot, and responding when you scream")
                 embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: "Use #{Aichan::BOT.prefix}help [command name] for more info about a command, or just have fun playing around")
             end
         end
