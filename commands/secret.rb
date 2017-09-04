@@ -8,7 +8,7 @@ module Aichan
         command_names = ""
         event.channel.send_embed do |embed|
             embed.title = Aichan::BOT.profile.username
-            embed.color = 4709333 #TODO: set this color in config.json instead
+            embed.color = CONFIG['help_color']
             embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: Aichan::BOT.profile.avatar_url)
             commands.each do |c|
                 command_names += "#{c.name},  "
