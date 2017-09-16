@@ -13,3 +13,4 @@
     - `command_whitelist`: Boolean deciding whether to only include commands specified in in `commands` (true) or include all commands except them (false)
     - `commands`: command files to include/exclude (see `command_whitelist`). If left empty, all commands are included regardless of `command_whitelist`
     - `help_color`: Color to use for the :help embed 
+    - `familiars`: Bots to let Ai :summon (see commands/summon.rb for more details)

@@ -14,6 +14,6 @@ A general command bot for Discord (self-host)
 - The following installed and in your system path:  
     - fortune (fortune)  
   
-If you don't meet any of these requirements (other than the first 5 (internet-discordrb), which are all pretty essential), set up config.json to exclude the commands that rely on them (indicated in parentheses; see config.json.sample for more details)  
+If you don't meet any of these requirements (other than the first 5 (internet-discordrb), which are all pretty essential), set up config.json to exclude the commands that rely on them (indicated in parentheses; see docs/config.json.md for more details)  
   
 One you're good to go, start the bot by running `ruby robo.rb`

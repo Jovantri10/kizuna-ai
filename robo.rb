@@ -3,7 +3,6 @@ require 'discordrb'
 module Aichan
     require 'json'
     
-    require_relative 'helpers/dangeru'
     require_relative 'config'
 
     #Seed rng with whatever the OS has
@@ -102,6 +101,15 @@ module Aichan
         content.match(/(a{2,}h*|a+h{2,})/) do |m|
             puts m
             event.respond "You okay there?" if content == m.to_s
+        end
+    end
+
+    BOT.message(contain: ['big', 'Big', 'BIG']) do |event|
+        words = event.message.content.downcase.split(/[[:space:]]/)
+        if words.include? 'big'
+            #event.respond '4⃣ 🇺'
+            event.message.create_reaction('4⃣')
+            event.message.create_reaction('🇺')
         end
     end
     
