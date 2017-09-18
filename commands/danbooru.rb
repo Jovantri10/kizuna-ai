@@ -10,7 +10,12 @@ module Aichan
         url = random_pic(tag)
         #If something was found, send the url
         if url != ''
-            event.respond(url)
+            #event.respond(url)
+            event.channel.send_embed do |embed|
+                embed.title = tag
+                embed.url = url[1]
+                embed.image = Discordrb::Webhooks::EmbedImage.new(url: url[0])
+            end
         #Otherswise, try to suggest similar tags
         else
             suggest_tag(tag, event)

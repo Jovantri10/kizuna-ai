@@ -7,7 +7,17 @@ module Aichan
         tag = args.join('_')
         url = random_safe_pic(tag)
         if url != ''
-            event.respond(url)
+            #event.respond "#{url[0]} #{url[1]}"
+            puts url
+            puts url[0]
+            puts url[1]
+            #event.respond(url)
+            event.channel.send_embed do |embed|
+                embed.title = tag
+                embed.url = url[1]
+                embed.image = Discordrb::Webhooks::EmbedImage.new(url: url[0])
+            end
+
         else
             suggest_tag(tag, event)
         end
