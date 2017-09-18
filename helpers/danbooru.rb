@@ -34,7 +34,7 @@ def random_pic(tagstr)
             desired_result = rand(all_results.length)
         end
         #"#{$base_url}#{all_results[desired_result]['large_file_url']}"
-        ["#{$base_url}#{all_results[desired_result]['file_url']}", "#{$base_url}/posts/#{all_results[desired_result]['id']}"]
+        ["#{$base_url}#{all_results[desired_result]['file_url']}", "#{$base_url}/posts/#{all_results[desired_result]['id']}", "By: #{all_results[desired_result]['tag_string_artist']}"]
     #If there were no results, return an empty string
     else
         ""

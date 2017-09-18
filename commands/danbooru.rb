@@ -12,7 +12,7 @@ module Aichan
         if url != ''
             #event.respond(url)
             event.channel.send_embed do |embed|
-                embed.title = tag
+                embed.title = url[2]
                 embed.url = url[1]
                 embed.image = Discordrb::Webhooks::EmbedImage.new(url: url[0])
             end
