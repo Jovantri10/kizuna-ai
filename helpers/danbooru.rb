@@ -29,12 +29,12 @@ def random_pic(tagstr)
     #If we actually got results, pick one at random
     if all_results.length > 0
         desired_result = rand(all_results.length)
-        #If we picked a result without a large_file_url, try again
-        while all_results[desired_result]['large_file_url'] == nil || all_results[desired_result]['large_file_url'] == ""
+        #If we picked a result without a file_url, try again
+        while all_results[desired_result]['file_url'] == nil || all_results[desired_result]['file_url'] == ""
             desired_result = rand(all_results.length)
         end
         #"#{$base_url}#{all_results[desired_result]['large_file_url']}"
-        ["#{$base_url}#{all_results[desired_result]['large_file_url']}", "#{$base_url}/posts/#{all_results[desired_result]['id']}"]
+        ["#{$base_url}#{all_results[desired_result]['file_url']}", "#{$base_url}/posts/#{all_results[desired_result]['id']}"]
     #If there were no results, return an empty string
     else
         ""
@@ -57,5 +57,5 @@ end
 
 ##Some tests
 #m = safe_search("kudou mirei")
-#puts m[0]['large_file_url']
+#puts m[0]['file_url']
 #puts random_safe_pic('kudou mirei')
