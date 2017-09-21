@@ -4,11 +4,12 @@ module Aichan
     Aichan::BOT.command :play, description: 'Make Ai-chan play a game', usage: "#{Aichan::BOT.prefix}play <game name>" do |event, *args|
         #If nothing was given, use a fallback
         if args.length == 0
-            #See if game should be number of servers
-            playing = parse_special(CONFIG['default_game'], Aichan::BOT.servers.length)
-            Aichan::BOT.game=playing
-            break
+            play = CONFIG['default_game']
+        else
+            play = args.join(' ')
         end
-        Aichan::BOT.game=(args.join(' '))
+        #See if game should be number of servers
+        playing = parse_special(play, Aichan::BOT.servers.length)
+        Aichan::BOT.game=playing
     end
 end
