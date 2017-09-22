@@ -16,6 +16,14 @@ end
 #If someone tries to get a quote from pool ALL, one of these is picked at random
 $pools = [Pool::ANIMU, Pool::VIDYA, Pool::GEN]
 
+def cleanquote(quotestring)
+    strippedquote = quotestring.strip
+    strippedquote.match /\"(.*)\"/ do |m|
+        strippedquote = m[1] if strippedquote == m.to_s
+    end
+    strippedquote.gsub('"', "'")
+end
+
 #Add a quote to the given pool
 def addquote(quotestring, pool)
     quotelist = quotestring.split('|')
@@ -25,9 +33,13 @@ def addquote(quotestring, pool)
     elsif quotelist.length > 3
         "That quote has too many parts. `'quote' | 'character' | 'series'`"
     else #good quote
+        #Clean each part
+        quotelist.collect! do |q|
+            cleanquote(q)
+        end
         #Make a json string representing the quote:
         #{"quote":{"statement":(quote),"character":(source),"series":(extra info)}}
-        quotejson = "{\"quote\":{\"statement\":\"#{quotelist[0].strip}\",\"character\":\"#{quotelist[1].strip}\",\"series\":\"#{quotelist[2].strip}\"}}"
+        quotejson = "{\"quote\":{\"statement\":\"#{quotelist[0]}\",\"character\":\"#{quotelist[1]}\",\"series\":\"#{quotelist[2]}\"}}"
 
         #Save as <first_available_number>.json
         filename = '0.json'
