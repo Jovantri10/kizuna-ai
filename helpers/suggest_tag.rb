@@ -22,7 +22,7 @@ def suggest_tag(attempt, event)
         event.channel.start_typing
         event.channel.send_embed do |embed|
             embed.title = "Did you mean one of these?"
-            embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: random_safe_pic(possible_tags[0]["name"]))
+            embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: random_safe_pic(possible_tags[0]["name"])[0])
             embed.add_field(name: "Possible tags", value: suggestions)
         end
     #If no similar tags were found, give up
