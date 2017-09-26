@@ -6,7 +6,13 @@ module Aichan
         if args.length > 0
             event.respond("#{addquote(args.join(' '), Pool::GEN)} #{event.user.mention}")
         else
-            event.respond("#{event.user.mention}\n#{quote(Pool::GEN)}")
+            q = quote(Pool::GEN)
+            event << event.user.mention
+            event << '```'
+            event << "\"#{q['statement']}\""
+            event << "~#{q['character']} (#{q['series']})"
+            event << '```'
+            #event.respond("#{event.user.mention}\n#{quote(Pool::GEN)}")
         end
     end
 end

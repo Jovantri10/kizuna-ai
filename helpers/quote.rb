@@ -84,14 +84,15 @@ def quote(pool)
     quote = JSON.parse(readfile.read)["quote"]
     #Put together the quote (might change how this is done to make the logic less 
     #discord-specific
-    retval = ""
-    retval += "```\r"
-    retval += "\"#{quote["statement"]}\"\r"
-    retval += "~#{quote["character"]} (#{quote["series"]})\r"
-    retval += "```"
+    #retval = ""
+    #retval += "```\r"
+    #retval += "\"#{quote["statement"]}\"\r"
+    #retval += "~#{quote["character"]} (#{quote["series"]})\r"
+    #retval += "```"
     readfile.close
     #Return the quote
-    retval
+    #retval
+    quote
 end
 
 #If any quote pools don't exist, make them

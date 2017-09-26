@@ -1,3 +1,5 @@
+#TODO: combine with danbooru
+#TODO: remove discordrb dependency
 require 'discordrb'
 require_relative 'danbooru'
 #$safebooru, $danbooru

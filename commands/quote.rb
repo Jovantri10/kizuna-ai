@@ -8,7 +8,13 @@ module Aichan
             event.respond("#{addquote(args.join(' '), Pool::GEN)} #{event.user.mention}")
         #Otherwise, get one from a randomly selected pool
         else
-            event.respond("#{event.user.mention}\n#{quote(Pool::ALL)}")
+            q = quote(Pool::ALL)
+            event << event.user.mention
+            event << '```'
+            event << "\"#{q['statement']}\""
+            event << "~#{q['character']} (#{q['series']})"
+            event << '```'
+            #event.respond("#{event.user.mention}\n#{quote(Pool::ALL)}")
         end
     end
 end

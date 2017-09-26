@@ -1,4 +1,3 @@
-require 'discordrb'
 require_relative 'empty'
 
 def add_xmeme(url)

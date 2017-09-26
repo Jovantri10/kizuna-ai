@@ -8,7 +8,13 @@ module Aichan
             event.respond("#{addquote(args.join(' '), Pool::ANIMU)} #{event.user.mention}")
         #Otherwise, give them a quote
         else
-            event.respond("#{event.user.mention}\n#{quote(Pool::ANIMU)}")
+            q = quote(Pool::ANIMU)
+            event << event.user.mention
+            event << '```'
+            event << "\"#{q['statement']}\""
+            event << "~#{q['character']} (#{q['series']})"
+            event << '```'
+            #event.respond("#{event.user.mention}\n#{quote(Pool::ANIMU)}")
         end
     end
     

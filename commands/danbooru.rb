@@ -8,7 +8,8 @@ module Aichan
         tag = args.join('_')
         #Try to get an image url
         url = random_pic(tag)
-        #If something was found, send the url
+        #If something was found, send an embed with the pic, artist, and a link to the post
+        #TODO: handle non-images
         if url != ''
             #event.respond(url)
             event.channel.send_embed do |embed|

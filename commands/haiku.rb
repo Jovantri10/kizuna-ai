@@ -8,14 +8,8 @@ module Aichan
         end
         num_syllables = 0
         event.user.await("#{event.message.id}_syllables".to_sym) do |syllable_event|
-            syllables = syllable_event.message.content.downcase
-            puts syllables
-            if syllables.start_with?('five', '5')
-                num_syllables = 5
-            elsif syllables.start_with?('seven', '7')
-                num_syllables = 7
-            else
-                num_syllables = -1
+            num_syllables = get_syllables(syllable_event.message.content.downcase)
+            if num_syllables < 0
                 syllable_event.respond "Either I can't understand you or you don't know how haikus work"
             end
         end

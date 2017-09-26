@@ -2,7 +2,19 @@ require_relative 'empty'
 
 $haiku_dir = 'haiku/'
 
-#Add a new line (num_syllables error checking is done in commands/haiku.rb, so it should only ever be 5 or 7)
+def get_syllables(syllable_string)
+    num_syllables
+    if syllables.start_with?('five', '5')
+        num_syllables = 5
+    elsif syllables.start_with?('seven', '7')
+        num_syllables = 7
+    else
+        num_syllables = -1
+    end
+    num_syllables
+end
+
+#Add a new line (num_syllables error checking is handled prior to calling this, so it should only ever be 5 or 7)
 def add_line(num_syllables, line)
     #Get a unique filename (x.y where x is the first available number and y is num_syllables)
     filenum = 0

@@ -7,8 +7,6 @@ module Aichan
         tag = args.join('_')
         url = random_safe_pic(tag)
         if url != ''
-            #event.respond "#{url[0]} #{url[1]}"
-            #event.respond(url)
             event.channel.send_embed do |embed|
                 embed.title = url[2]
                 embed.url = url[1]

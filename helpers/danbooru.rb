@@ -4,12 +4,6 @@ require 'open-uri'
 #All calls will be to danbooru
 $base_url = "http://danbooru.donmai.us"
 
-#Search for sfw images in the given tag (I don't think this is used anymore)
-#def danbooru_safe_search(tag)
-    #tag_str = "rating:safe+#{tag}".gsub(' ', '_')
-    #danbooru_search(tag_str)
-#end
-
 #Search for any images in the given tag(s)
 def danbooru_search(tag_str)
     #Get search results (but only the first 100 to make things easier for everyone involved)
@@ -56,6 +50,6 @@ def tag_search(attempt)
 end
 
 ##Some tests
-#m = safe_search("kudou mirei")
+#m = danbooru_search("kudou mirei")
 #puts m[0]['file_url']
 #puts random_safe_pic('kudou mirei')

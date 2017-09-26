@@ -1,6 +1,7 @@
 module Aichan
     require_relative '../helpers/foaas.rb'
 
+    #TODO: make this command more usable
     Aichan::BOT.command :foaas, description: "Sends any given parameters to foaas.com (use #{Aichan::BOT.prefix}foaas operations for a list of commands and parameters)", usage: "#{Aichan::BOT.prefix}foaas <command> [param1, param2, etc.]" do |event, command, *args|
         response = nil
         puts args.length

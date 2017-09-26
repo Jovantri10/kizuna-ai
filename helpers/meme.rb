@@ -1,3 +1,4 @@
+#TODO: remove reliance on discordrb
 require 'discordrb'
 require 'open-uri'
 require_relative 'empty'
