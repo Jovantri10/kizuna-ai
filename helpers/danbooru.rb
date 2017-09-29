@@ -35,7 +35,7 @@ def random_pic(tagstr)
         else
             thumbnail = "#{$base_url}#{all_results[desired_result]['preview_file_url']}"
         end
-        [, "#{$base_url}/posts/#{all_results[desired_result]['id']}", "By: #{all_results[desired_result]['tag_string_artist']}"]
+        [thumbnail, "#{$base_url}/posts/#{all_results[desired_result]['id']}", "By: #{all_results[desired_result]['tag_string_artist']}"]
     #If there were no results, return an empty string
     else
         ""
