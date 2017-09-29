@@ -1,5 +1,6 @@
 require 'json'
 require 'open-uri'
+require_relative 'is_image.rb'
 
 #All calls will be to danbooru
 $base_url = "http://danbooru.donmai.us"
@@ -28,7 +29,13 @@ def random_pic(tagstr)
             desired_result = rand(all_results.length)
         end
         #"#{$base_url}#{all_results[desired_result]['large_file_url']}"
-        ["#{$base_url}#{all_results[desired_result]['file_url']}", "#{$base_url}/posts/#{all_results[desired_result]['id']}", "By: #{all_results[desired_result]['tag_string_artist']}"]
+        thumbnail = ''
+        if is_image("#{$base_url}#{all_results[desired_result]['file_url']}")
+            thumbnail = "#{$base_url}#{all_results[desired_result]['file_url']}"
+        else
+            thumbnail = "#{$base_url}#{all_results[desired_result]['preview_file_url']}"
+        end
+        [, "#{$base_url}/posts/#{all_results[desired_result]['id']}", "By: #{all_results[desired_result]['tag_string_artist']}"]
     #If there were no results, return an empty string
     else
         ""

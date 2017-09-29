@@ -1,4 +1,5 @@
 require_relative 'empty'
+require_relative 'is_image'
 
 def add_xmeme(url)
     memepool = Dir.glob("xmeme/*.m")
@@ -9,13 +10,16 @@ end
 
 def get_xmeme
     memepool = Dir.glob("xmeme/*.m")
-    retval = ''
+    retval = []
     if memepool.length == 0
-        retval = "No memes :("
+        retval.push 'No memes :('
     else
         memefile = File.open("xmeme/#{rand(memepool.length)}.m")
-        retval = memefile.read
+        retval.push memefile.read
         memefile.close
+        if is_image(retval[0])
+            retval.push 'image'
+        end
     end
     retval
 end

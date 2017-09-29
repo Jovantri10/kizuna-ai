@@ -1,5 +1,11 @@
 module Aichan
     require_relative '../helpers/xmeme'
+
+    #Make xmeme directory
+    unless Dir.exist? 'xmeme'
+        Dir.mkdir 'xmeme'
+    end
+
     Aichan::BOT.command :xmeme, description: 'Testing new meme system', usage: "#{Aichan::BOT.prefix}xmeme [add [url]]" do |event, *args|
         if args.length > 0 && args[0].downcase == 'add'
             if event.message.attachments.length > 0
@@ -16,7 +22,17 @@ module Aichan
                 event.respond 'What exactly am I supposed to be adding?'
             end
         else
-            event.respond(get_xmeme)
+            meme_url = get_xmeme
+            if meme_url.length == 1
+                event.respond meme_url[0]
+            else
+                event.channel.send_embed do |embed|
+                    embed.title = 'Maymay'
+                    embed.url = meme_url[0]
+                    embed.image = Discordrb::Webhooks::EmbedImage.new url: meme_url[0]
+                end
+            end
+            #event.respond(get_xmeme)
         end
     end
 end
