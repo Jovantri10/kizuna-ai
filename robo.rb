@@ -11,7 +11,7 @@ module Aichan
     config = load_config
     IDS = config['ids']
     CONFIG = config['config']
-    BOT = Discordrb::Commands::CommandBot.new token: IDS['token'], client_id: IDS['client_id'], prefix: '$'
+    BOT = Discordrb::Commands::CommandBot.new token: IDS['token'], client_id: IDS['client_id'], prefix: CONFIG['prefix']
 
     #Load commands:
     #If no specific commands are given, load them all
