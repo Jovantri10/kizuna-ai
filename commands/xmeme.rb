@@ -1,5 +1,6 @@
 module Aichan
     require_relative '../helpers/xmeme'
+    require_relative '../helpers/is_image'
 
     #Make xmeme directory
     unless Dir.exist? 'xmeme'
@@ -23,14 +24,14 @@ module Aichan
             end
         else
             meme_url = get_xmeme
-            if meme_url.length == 1
-                event.respond meme_url[0]
-            else
+            if is_image(meme_url)
                 event.channel.send_embed do |embed|
                     embed.title = 'Maymay'
-                    embed.url = meme_url[0]
-                    embed.image = Discordrb::Webhooks::EmbedImage.new url: meme_url[0]
+                    embed.url = meme_url
+                    embed.image = Discordrb::Webhooks::EmbedImage.new url: meme_url
                 end
+            else
+                event.respond meme_url
             end
             #event.respond(get_xmeme)
         end
