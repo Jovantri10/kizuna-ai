@@ -85,23 +85,3 @@ def get_meme(pool)
     memefile
 end
 
-#If any of the pools don't exist, make them
-def make_dirs()
-    if !Dir.exist? Memepool::MEME
-        Dir.mkdir Memepool::MEME
-    end
-    if !Dir.exist? Memepool::SAFE
-        Dir.mkdir Memepool::SAFE
-    end
-    if !Dir.exist? Memepool::UNSAFE
-        Dir.mkdir Memepool::UNSAFE
-    end
-    if !Dir.exist? Memepool::DIE
-        Dir.mkdir Memepool::DIE
-    end
-    if !Dir.exist? Memepool::ANIMAL
-        Dir.mkdir Memepool::ANIMAL
-    end
-end
-
-make_dirs

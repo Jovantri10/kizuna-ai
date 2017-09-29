@@ -1,6 +1,11 @@
 module Aichan
     require_relative '../helpers/meme'
 
+    #Ensure the necessary directory exists
+    if !Dir.exist? Memepool::ANIMAL
+        Dir.mkdir Memepool::ANIMAL
+    end
+
     #Get or add a cute/funny animal pic
     Aichan::BOT.command :animal, description: 'Aww', usage: "#{Aichan::BOT.prefix}animal [add]" do |event, *args|
         #If they're adding an animal and attached a pic, add it. If they didn't include

@@ -1,6 +1,14 @@
 module Aichan
     require_relative '../helpers/meme'
 
+    #Ensure the necessary directories exist
+    if !Dir.exist? Memepool::MEME
+        Dir.mkdir Memepool::MEME
+    end
+    if !Dir.exist? Memepool::SAFE
+        Dir.mkdir Memepool::SAFE
+    end
+
     #Get or add a funny sfw pic (also see :meme)
     Aichan::BOT.command :safememe, help_available: false, description: 'get a random sfw meme (or add any attached to the message)', usage: "#{Aichan::BOT.prefix}safememe [add]" do |event, *args|
         if args.length > 0 and args[0].downcase == 'add'

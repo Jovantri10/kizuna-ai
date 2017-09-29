@@ -1,6 +1,17 @@
 module Aichan
     require_relative '../helpers/meme'
 
+    #Ensure the necessary directories exist
+    if !Dir.exist? Memepool::MEME
+        Dir.mkdir Memepool::MEME
+    end
+    if !Dir.exist? Memepool::SAFE
+        Dir.mkdir Memepool::SAFE
+    end
+    if !Dir.exist? Memepool::UNSAFE
+        Dir.mkdir Memepool::UNSAFE
+    end
+
     #Get or add a funny picture (or really any sort of file) Also see :safememe
     Aichan::BOT.command :meme, description: 'get a random meme (or add any attached to the message)', usage: "#{Aichan::BOT.prefix}meme [add]" do |event, *args|
         #If they're trying to add something without attaching anything, gently remind them
