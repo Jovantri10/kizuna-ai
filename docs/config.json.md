@@ -13,4 +13,5 @@
     - `command_whitelist`: Boolean deciding whether to only include commands specified in in `commands` (true) or include all commands except them (false)
     - `commands`: command files to include/exclude (see `command_whitelist`). If left empty, all commands are included regardless of `command_whitelist`
     - `help_color`: Color to use for the :help embed 
-    - `familiars`: Bots to let Ai :summon (see commands/summon.rb for more details)
+    - `familiars`: Bots to let Ai :summon (see commands/summon.rb for more details)  
+    - `prefix`: The symbol(s) to put before a command to tell the bot it's a command (so if you keep the default prefix of '$', you would run meme by sending $meme)
