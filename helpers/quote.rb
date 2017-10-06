@@ -21,7 +21,7 @@ def cleanquote(quotestring)
     strippedquote.match /\"(.*)\"/ do |m|
         strippedquote = m[1] if strippedquote == m.to_s
     end
-    strippedquote.gsub('"', "'")
+    strippedquote.gsub('"', "'").gsub('\\', '')
 end
 
 #Add a quote to the given pool
