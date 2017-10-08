@@ -37,6 +37,23 @@ module Aichan
             end
         end
     end
+
+    #If we don't have :meme included, we can use it as an alias
+    unless Aichan::BOT.commands.include?(:meme)
+        exec_command = nil
+        #:xmeme is closer to :meme in syntax and function, so try aliasing that first
+        if Aichan::BOT.commands.include?(:xmeme)
+            exec_command = :xmeme
+        #If we don't have :xmeme but have :memebooru, may as well alias that
+        elsif Aichan::BOT.commands.include?(:memebooru)
+            exec_command = :memebooru
+        end
+        if exec_command
+            Aichan::BOT.command :meme, description: "Alias for #{exec_command}", usage: "See #{Aichan::BOT.prefix}help #{exec_command}" do |event, *args|
+                Aichan::BOT.execute_command(exec_command, event, args)
+            end
+        end
+    end
     
     #waifu_abuse
     mean_words = ['broken bot', 'bad bot', 'Broken bot', 'Bad bot', 'bot is broken', 'Bot is broken']
