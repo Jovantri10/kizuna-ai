@@ -5,7 +5,7 @@ module Aichan
             command = Aichan::BOT.commands[command_name.to_sym]
             return "I'm not seeing a #{Aichan::BOT.prefix}#{command_name} command" unless command
             description = command.attributes[:description] || 'No description, but it probably does something'
-            usage = command.attributes[:usage]
+            usage = command.attributes[:usage] || 'I dunno, you figure it out'
             event.channel.send_embed do |embed|
                 embed.title = command_name
                 embed.color = CONFIG['help_color']

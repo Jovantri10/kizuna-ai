@@ -1,6 +1,6 @@
 module Aichan
     #Make the bot say dumb things
-    Aichan::BOT.command :botsay do |event, *args|
+    Aichan::BOT.command :botsay, description: 'echo chamber', usage: "#{Aichan::BOT.prefix}botsay <thing to say>" do |event, *args|
         event.respond(args.join(' '))
     end
     
